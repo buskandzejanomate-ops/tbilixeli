@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+<meta charset="UTF-8">
+<title>თბილი ხელი</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #0f172a;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* HEADER */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    animation: fadeDown 1s ease;
+}
+
+header img {
+    width: 70px;
+}
+
+header h1 {
+    font-size: 28px;
+    color: #ff9f00;
+}
+
+/* HERO */
+.hero {
+    height: 90vh;
+    background: linear-gradient(135deg,#ff9f00,#00aaff);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    animation: fadeIn 1.5s ease;
+}
+
+.hero h2 {
+    font-size: 45px;
+    animation: glow 2s infinite alternate;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.hero button {
+    margin-top: 25px;
+    padding: 15px 40px;
+    font-size: 20px;
+    border: none;
+    border-radius: 30px;
+    background: black;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.hero button:hover {
+    background: white;
+    color: black;
+    transform: scale(1.1);
+}
+
+/* SECTIONS */
+.section {
+    padding: 60px 20px;
+    text-align: center;
+    animation: fadeUp 1s ease;
+}
+
+.section h3 {
+    font-size: 32px;
+    color: #ff9f00;
+}
+
+.section p {
+    max-width: 800px;
+    margin: auto;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+/* CARDS */
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.card {
+    background: rgba(255,255,255,0.1);
+    padding: 25px;
+    width: 250px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    transition: 0.4s;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 0 30px #00aaff;
+}
+
+/* FOOTER */
+footer {
+    background: black;
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* POPUP */
+#popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-box {
+    background: white;
+    color: black;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    animation: zoomIn 0.5s ease;
+}
+
+.popup-box h3 {
+    color: #ff9f00;
+}
+
+.popup-box a {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #00aaff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+    from {opacity:0;}
+    to {opacity:1;}
+}
+
+@keyframes fadeDown {
+    from {opacity:0; transform:translateY(-20px);}
+    to {opacity:1; transform:translateY(0);}
+}
+
+@keyframes fadeUp {
+    from {opacity:0; transform:translateY(40px);}
+    to {opacity:1; transform:translateY(0);}
+}
+
+@keyframes zoomIn {
+    from {transform:scale(0.5);}
+    to {transform:scale(1);}
+}
+
+@keyframes glow {
+    from {text-shadow: 0 0 10px white;}
+    to {text-shadow: 0 0 25px yellow;}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <img src="logo.png">
+    <h1>თბილი ხელი</h1>
+</header>
+
+<div class="hero">
+    <h2>გავუზიაროთ სითბო ერთმანეთს</h2>
+    <p>ტანსაცმლის დახმარება ადამიანებისთვის ვისაც სჭირდება</p>
+    <button onclick="openPopup()">დაგვეხმარე</button>
+</div>
+
+<div class="section">
+    <h3>რა არის თბილი ხელი?</h3>
+    <p>„თბილი ხელი“ არის პროექტი, რომელიც აგროვებს და არიგებს ტანსაცმელს ადამიანებისთვის, ვისაც სჭირდება სითბო და დახმარება.</p>
+</div>
+
+<div class="section">
+    <h3>როგორ მუშაობს?</h3>
+    <div class="cards">
+        <div class="card">
+            <h4>📦 შეგროვება</h4>
+            <p>ადამიანები გვაძლევენ ტანსაცმელს</p>
+        </div>
+        <div class="card">
+            <h4>🧼 დახარისხება</h4>
+            <p>ვწმენდთ და ვალაგებთ ტანსაცმელს</p>
+        </div>
+        <div class="card">
+            <h4>🤝 დარიგება</h4>
+            <p>ვურიგებთ მათ ვისაც სჭირდება</p>
+        </div>
+    </div>
+</div>
+
+<div class="section">
+    <h3>ჩვენი სლოგანი</h3>
+    <p><b>„თბილი ხელი — თბილი გულიდან“</b></p>
+</div>
+
+<footer>
+    © 2026 თბილი ხელი | ნომერი: 595218708
+</footer>
+
+<!-- POPUP CONTACT -->
+<div id="popup">
+    <div class="popup-box">
+        <h3>📞 დაგვიკავშირდით</h3>
+        <p>ნომერი: <b>595218708</b></p>
+        <a href="tel:595218708">დარეკვა</a>
+        <br><br>
+        <button onclick="closePopup()">დახურვა</button>
+    </div>
+</div>
+
+<script>
+function openPopup() {
+    document.getElementById("popup").style.display = "flex";
+}
+function closePopup() {
+    document.getElementById("popup").style.display = "none";
+}
+</script>
+
+</body>
+</html>
